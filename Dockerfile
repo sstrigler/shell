@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM node:buster
 
 # Locales
 ENV LANGUAGE=en_US.UTF-8
@@ -17,7 +17,7 @@ ENV TZ=Europe/Berlin
 RUN apt-get update && apt-get install -y \
       build-essential \
       curl \
-      emacs \
+      emacs-nox \
       git \
       iputils-ping \
       net-tools \
