@@ -12,8 +12,8 @@ services:
       - "smrtrpck:/root/smrtrpck"
       - "~/.ssh/:/root/.ssh"
     ports:
-      - 8080
-      - 8000
+      - 8080:8080
+      - 8000:8000
 
 volumes:
   smrtrpck:
