@@ -12,7 +12,6 @@ services:
       - couchdb
     volumes:
       - "smrtrpck:/root/smrtrpck"
-      - "~/.ssh/:/root/.ssh"
     ports:
       - 18080:8080
       - 18000:8000
