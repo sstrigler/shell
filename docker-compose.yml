@@ -4,7 +4,7 @@ services:
   couchdb:
     image: couchdb
 
-  vuedev:
+  smrtrdev:
     image: sstrigler/shell:smrtrdev
     depends_on:
       - couchdb
