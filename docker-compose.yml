@@ -3,17 +3,28 @@ version: '3.0'
 services:
   couchdb:
     image: couchdb
+    restart: always
 
   smrtrdev:
     image: sstrigler/shell:smrtrdev
+    restart: always
     depends_on:
       - couchdb
     volumes:
       - "smrtrpck:/root/smrtrpck"
       - "~/.ssh/:/root/.ssh"
     ports:
-      - 8080:8080
-      - 8000:8000
+      - 18080:8080
+      - 18000:8000
+
+  vpn:
+    image: hwdsl2/ipsec-vpn-server
+    restart: always
+    env_file: "./vpn.env"
+    ports:
+      - 500:500/udp
+      - 4500:4500/udp
+    privileged: true
 
 volumes:
   smrtrpck:
