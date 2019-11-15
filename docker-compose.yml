@@ -1,0 +1,19 @@
+version: '3.0'
+
+services:
+  couchdb:
+    image: couchdb
+
+  vuedev:
+    image: sstrigler/shell:smrtrdev
+    depends_on:
+      - couchdb
+    volumes:
+      - "smrtrpck:/root/smrtrpck"
+      - "~/.ssh/:/root/.ssh"
+    ports:
+      - 8080
+      - 8000
+
+volumes:
+  smrtrpck:
