@@ -1,8 +1,6 @@
-FROM sstrigler/shell:node
+FROM sstrigler/shell:vuedev
 
-RUN yarn global add @vue/cli
-
-EXPOSE 8000
-EXPOSE 8080
-ENTRYPOINT ["/usr/local/bin/vue"]
-CMD ["ui", "--headless", "--host", "0.0.0.0", "--port","8000"]
+COPY smrtrpck smrtrpck
+WORKDIR smrtrpck
+RUN git checkout master # just to make sure
+RUN yarn install
