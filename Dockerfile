@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM erlang
 
 # Locales
 ENV LANGUAGE=en_US.UTF-8
