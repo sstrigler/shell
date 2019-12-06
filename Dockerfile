@@ -31,3 +31,6 @@ RUN chsh -s /usr/bin/zsh root
 
 WORKDIR /root
 COPY . .
+WORKDIR /root/edts
+RUN make
+WORKDIR /root
